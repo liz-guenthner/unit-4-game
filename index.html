@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Treat Game</title>
+  <title>Sleepy Puppy</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -13,20 +14,37 @@
 
 <body>
 
- <div class="container">
-
-    <div id="main-content">
-          <h1>Treat Game</h1>
-          
-          <div id="game-container">
-
-          </div>
-         
+  <div class="container">
+    <h1>Sleepy Puppy</h1>
+    <h3>The sleepy puppy wants some treats!</h3>
+    <p>Click on the bones to give him the EXACT amount he wants (each bone has a different value). Be careful not to give him too many or you'll put him to sleep and have to start over. Good&nbsp;luck!</p>
+    <div class="results-container">
+      <div class="random-number-container"><span id="random-number"></span>&nbsp;&nbsp;treats please!</div>
+      <div class="message-container">You gave:&nbsp;&nbsp;<span id="user-message">X</span></div>
+      <div class="results-box">
+        <div class="wins">Wins:&nbsp;&nbsp;<span id="wins">X</span></div>
+        <div class="losses">Losses:&nbsp;&nbsp;<span id="wins">X</span></div>
+      </div>
     </div>
-
-    <footer>Copyright &copy; 2019</footer>
+          
+    <div id="bone-container">
+      <div id="blue-bone" class="bone" value="blue">
+        <img src="assets/images/blue-bone.png">
+      </div>
+      <div id="yellow-bone" class="bone" value="yellow">
+        <img src="assets/images/yellow-bone.png">
+      </div>
+      <div id="red-bone" class="bone" value="red">
+        <img src="assets/images/red-bone.png">
+      </div>
+      <div id="green-bone" class="bone" value="green">
+        <img src="assets/images/green-bone.png">
+      </div>
+    </div>
+         
   </div>
 
+  <footer>Copyright &copy; 2019</footer>
 
   <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
