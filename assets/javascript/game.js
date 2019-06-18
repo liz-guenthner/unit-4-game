@@ -3,60 +3,59 @@ $(document).ready(function() {
     var randomNumber = '';
      // randomize number of treats puppy wants
      function Numbers(min,max){
-        randomNumber=(Math.floor(Math.random()*(max-min+1)+min));
+        return Math.floor(Math.random()*(max-min+1)+min);
     }
-    Numbers(19, 120)
-    $('#random-number').text(randomNumber);
+    
 
-    var blueBoneNumber = 0;
-    var yellowBoneNumber = 0;
-    var redBoneNumber = 0;
-    var greenBoneNumber = 0;
+    var values = {
+        blue: null,
+        yellow: null,
+        red: null,
+        green: null
+    };
+
     var totalBonesGiven = 0;
     var wins = 0;
     var losses = 0;
 
     // Use a function to initialize game to guarantee a reset
     function initializeGame() {
-        blueBoneNumber = '';
-        yellowBoneNumber = '';
-        redBoneNumber = '';
-        greenBoneNumber = '';
+        values.blue = Numbers(1, 12);
+        values.yellow = Numbers(1, 12);
+        values.red = Numbers(1, 12);
+        values.green = Numbers(1, 12);
         totalBonesGiven = '';
-        wins = '';
-        losses = '';
-
-        $("#user-message, #wins, #losses").empty();
+        randomNumber = Numbers(19, 120);
+        $('#random-number').text(randomNumber);
+        $("#user-message").empty();
     }
 
-   
-
+    
+    
     // randomize number of each bone value when clicked
     $(".bone").on("click", function() {
+        var color = $(this).attr('data-value');
+        var valueToAdd = values[color];
+        valueToAdd = parseInt(valueToAdd);
+        totalBonesGiven = parseInt(valueToAdd) + totalBonesGiven;
+        totalBonesGiven = parseInt(totalBonesGiven);
+        $('#user-message').text(totalBonesGiven);
 
-        function Numbers(min,max){
-            blueBoneNumber=(Math.floor(Math.random()*(max-min+1)+min));
+        if (totalBonesGiven === randomNumber) {
+            wins++;
+            console.log(wins);
+            $('#wins').text(wins);
+            $('#alert-user').text("Perfect! Play again!");
+            initializeGame();
+        } else if (totalBonesGiven > randomNumber) {
+            losses++;
+            $('#losses').text(losses);
+            $('#alert-user').text("Too many, try again!");
+            initializeGame();
+        } else {
+            $('#alert-user').text("More treats please!");
         }
-        Numbers(1, 12)
-        console.log(blueBoneNumber);
-
-        // Check if we've already run a calculation, if so... we'll just.
-        // if (isCalculated) {
-        //   return false;
-        // }
-
-        // If operator is chosen, we should be writing the secondNumber, otherwise, the firstNumber
-        // if (isOperatorChosen) {
-        //   secondNumber += $(this).val();
-        //   $("#second-number").text(secondNumber);
-
-        // }
-        // else {
-        //   firstNumber += $(this).val();
-        //   $("#first-number").text(firstNumber);
-        // }
-
-      });
+    });
 
 
     

@@ -52,7 +52,7 @@ p {
 }
 .results-container{
     position: absolute;
-    top: 140px;
+    top: 130px;
     left: 600px;
     font-size: 1.5em;
 }
@@ -64,6 +64,10 @@ p {
     font-family: funFont;
     font-size: 1.5em;
     vertical-align: middle;
+}
+#alert-user {
+    color: red;
+    text-align:center;
 }
 .message-container {
     margin:10px 0;

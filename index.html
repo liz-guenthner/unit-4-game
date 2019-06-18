@@ -20,24 +20,25 @@
     <p>Click on the bones to give him the EXACT amount he wants (each bone has a different value). Be careful not to give him too many or you'll put him to sleep and have to start over. Good&nbsp;luck!</p>
     <div class="results-container">
       <div class="random-number-container"><span id="random-number"></span>&nbsp;&nbsp;treats please!</div>
-      <div class="message-container">You gave:&nbsp;&nbsp;<span id="user-message">X</span></div>
+      <div id="alert-user"></div>
+      <div class="message-container">You gave:&nbsp;&nbsp;<span id="user-message"></span></div>
       <div class="results-box">
-        <div class="wins">Wins:&nbsp;&nbsp;<span id="wins">X</span></div>
-        <div class="losses">Losses:&nbsp;&nbsp;<span id="wins">X</span></div>
+        <div class="wins">Wins:&nbsp;&nbsp;<span id="wins"></span></div>
+        <div class="losses">Losses:&nbsp;&nbsp;<span id="losses"></span></div>
       </div>
     </div>
           
     <div id="bone-container">
-      <div id="blue-bone" class="bone" value="blue">
+      <div id="blue-bone" class="bone" data-value="blue">
         <img src="assets/images/blue-bone.png">
       </div>
-      <div id="yellow-bone" class="bone" value="yellow">
+      <div id="yellow-bone" class="bone" data-value="yellow">
         <img src="assets/images/yellow-bone.png">
       </div>
-      <div id="red-bone" class="bone" value="red">
+      <div id="red-bone" class="bone" data-value="red">
         <img src="assets/images/red-bone.png">
       </div>
-      <div id="green-bone" class="bone" value="green">
+      <div id="green-bone" class="bone" data-value="green">
         <img src="assets/images/green-bone.png">
       </div>
     </div>
