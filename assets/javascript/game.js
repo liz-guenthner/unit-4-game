@@ -43,7 +43,6 @@ $(document).ready(function() {
 
         if (totalBonesGiven === randomNumber) {
             wins++;
-            console.log(wins);
             $('#wins').text(wins);
             $('#alert-user').text("Perfect! Play again!");
             initializeGame();
